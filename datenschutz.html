@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebDi – Datenschutz / Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f4f0; --fg: #111110; --accent: #2a5cff;
+      --accent2: #e8e3d8; --muted: #888; --card: #ffffff;
+      --radius: 16px; --nav-h: 64px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--fg); font-size: 16px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(245,244,240,0.92); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: space-between; padding: 0 6vw; z-index: 100; border-bottom: 1px solid var(--accent2); }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.5rem; letter-spacing: -0.02em; color: var(--fg); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .back-link { font-size: 0.9rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .back-link:hover { color: var(--accent); }
+    .lang-toggle { background: var(--fg); color: var(--bg); border: none; border-radius: 50px; padding: 6px 14px; font-size: 0.8rem; font-family: 'DM Sans', sans-serif; cursor: pointer; font-weight: 500; transition: background 0.2s; }
+    .lang-toggle:hover { background: var(--accent); }
+    .page-hero { padding-top: calc(var(--nav-h) + 60px); padding-bottom: 60px; padding-left: 6vw; padding-right: 6vw; border-bottom: 1px solid var(--accent2); opacity: 0; animation: fadeUp 0.7s 0.2s forwards; }
+    .page-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .page-title { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; }
+    .page-sub { margin-top: 0.8rem; color: var(--muted); font-size: 0.95rem; }
+    .toc { background: var(--card); border: 1.5px solid var(--accent2); border-radius: var(--radius); padding: 1.5rem 1.8rem; margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.7s 0.3s forwards; }
+    .toc h3 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.8rem; }
+    .toc ol { padding-left: 1.2rem; }
+    .toc li { margin-bottom: 0.3rem; }
+    .toc a { color: var(--accent); font-size: 0.9rem; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .content-wrap { max-width: 760px; margin: 0 auto; padding: 60px 6vw 100px; }
+    .section-block { margin-bottom: 3.5rem; scroll-margin-top: calc(var(--nav-h) + 20px); opacity: 0; animation: fadeUp 0.7s forwards; }
+    .section-block:nth-child(2){animation-delay:0.35s} .section-block:nth-child(3){animation-delay:0.42s} .section-block:nth-child(4){animation-delay:0.49s} .section-block:nth-child(5){animation-delay:0.56s} .section-block:nth-child(6){animation-delay:0.63s} .section-block:nth-child(7){animation-delay:0.70s} .section-block:nth-child(8){animation-delay:0.77s}
+    .section-block h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1.5px solid var(--accent2); display: flex; align-items: center; gap: 0.6rem; }
+    .num { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 700; background: var(--accent); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .section-block p { color: #444; margin-bottom: 0.8rem; font-size: 0.95rem; }
+    .section-block h3 { font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.4rem; }
+    .highlight-box { background: var(--card); border: 1.5px solid var(--accent2); border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1rem 0; font-size: 0.92rem; color: #444; }
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1rem; }
+    .right-item { background: var(--card); border: 1.5px solid var(--accent2); border-radius: 10px; padding: 1rem; font-size: 0.88rem; }
+    .right-item strong { display: block; margin-bottom: 0.2rem; color: var(--fg); }
+    .right-item span { color: var(--muted); }
+    .contact-box { background: var(--fg); color: var(--bg); border-radius: var(--radius); padding: 1.5rem 1.8rem; margin-top: 1rem; font-size: 0.92rem; }
+    .placeholder { background: #fff3cd; border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: #856404; font-style: italic; }
+    footer { text-align: center; padding: 2rem 6vw; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--accent2); }
+    footer a { color: var(--muted); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 600px) { .rights-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Web<span>Di</span></a>
+  <div class="nav-right">
+    <a class="back-link" href="index.html">← <span data-de="Zurück" data-en="Back">Zurück</span></a>
+    <button class="lang-toggle" onclick="toggleLang()">EN</button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="page-tag" data-de="Rechtliches" data-en="Legal">Rechtliches</p>
+  <h1 class="page-title" data-de="Datenschutzerklärung" data-en="Privacy Policy">Datenschutzerklärung</h1>
+  <p class="page-sub" data-de="Zuletzt aktualisiert: Januar 2025" data-en="Last updated: January 2025">Zuletzt aktualisiert: Januar 2025</p>
+</div>
+
+<div class="content-wrap">
+
+  <div class="toc">
+    <h3 data-de="Inhalt" data-en="Contents">Inhalt</h3>
+    <ol>
+      <li><a href="#s1" data-de="Verantwortlicher" data-en="Controller">Verantwortlicher</a></li>
+      <li><a href="#s2" data-de="Welche Daten wir erheben" data-en="What data we collect">Welche Daten wir erheben</a></li>
+      <li><a href="#s3" data-de="Zweck der Datenverarbeitung" data-en="Purpose of processing">Zweck der Datenverarbeitung</a></li>
+      <li><a href="#s4" data-de="Rechtsgrundlagen" data-en="Legal basis">Rechtsgrundlagen</a></li>
+      <li><a href="#s5" data-de="Datenweitergabe" data-en="Data sharing">Datenweitergabe</a></li>
+      <li><a href="#s6" data-de="Ihre Rechte" data-en="Your rights">Ihre Rechte</a></li>
+      <li><a href="#s7" data-de="Cookies" data-en="Cookies">Cookies</a></li>
+      <li><a href="#s8" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+    </ol>
+  </div>
+
+  <div class="section-block" id="s1">
+    <h2><span class="num">1</span><span data-de="Verantwortlicher" data-en="Controller">Verantwortlicher</span></h2>
+    <p data-de="Verantwortlicher im Sinne der DSGVO für diese Website ist:" data-en="The controller responsible for data processing on this website is:">Verantwortlicher im Sinne der DSGVO für diese Website ist:</p>
+    <div class="highlight-box">
+      <strong>WebDi</strong><br>
+      <span class="placeholder" data-de="Dein Vor- und Nachname" data-en="Your full name">Dikesh Maharjan</span><br>
+      <span class="placeholder" data-de="Musterstraße 1, 12345 Musterstadt" data-en="Example Street 1, 12345 City">Ingeborg-Feustel-Str. 11</span><br>
+      E-Mail: <span class="placeholder">di.kesh1995@outlook.com</span>
+    </div>
+  </div>
+
+  <div class="section-block" id="s2">
+    <h2><span class="num">2</span><span data-de="Welche Daten wir erheben" data-en="What data we collect">Welche Daten wir erheben</span></h2>
+    <h3 data-de="Beim Besuch der Website" data-en="When visiting the website">Beim Besuch der Website</h3>
+    <p data-de="Beim Aufrufen dieser Website werden automatisch folgende Daten erfasst: IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser und Betriebssystem." data-en="When visiting this website, the following data is automatically recorded: IP address, date and time of access, page visited, browser and operating system used.">Beim Aufrufen dieser Website werden automatisch folgende Daten erfasst: IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser und Betriebssystem.</p>
+    <h3 data-de="Beim Nutzen des Kontaktformulars" data-en="When using the contact form">Beim Nutzen des Kontaktformulars</h3>
+    <p data-de="Wenn Sie das Kontaktformular verwenden, werden Ihr Name, Ihre E-Mail-Adresse, der Betreff sowie Ihre Nachricht erhoben und zur Beantwortung Ihrer Anfrage verwendet." data-en="When you use the contact form, your name, email address, subject, and message are collected and used to respond to your inquiry.">Wenn Sie das Kontaktformular verwenden, werden Ihr Name, Ihre E-Mail-Adresse, der Betreff sowie Ihre Nachricht erhoben und zur Beantwortung Ihrer Anfrage verwendet.</p>
+  </div>
+
+  <div class="section-block" id="s3">
+    <h2><span class="num">3</span><span data-de="Zweck der Datenverarbeitung" data-en="Purpose of processing">Zweck der Datenverarbeitung</span></h2>
+    <p data-de="Die erhobenen Daten werden ausschließlich für folgende Zwecke verwendet:" data-en="The collected data is used exclusively for the following purposes:">Die erhobenen Daten werden ausschließlich für folgende Zwecke verwendet:</p>
+    <div class="highlight-box">
+      <p data-de="• Betrieb und Sicherstellung der Funktionsfähigkeit der Website" data-en="• Operation and ensuring the functionality of the website">• Betrieb und Sicherstellung der Funktionsfähigkeit der Website</p>
+      <p data-de="• Beantwortung von Kundenanfragen über das Kontaktformular" data-en="• Responding to customer inquiries via the contact form">• Beantwortung von Kundenanfragen über das Kontaktformular</p>
+      <p data-de="• Vertragsanbahnung und -erfüllung" data-en="• Contract initiation and fulfillment">• Vertragsanbahnung und -erfüllung</p>
+    </div>
+  </div>
+
+  <div class="section-block" id="s4">
+    <h2><span class="num">4</span><span data-de="Rechtsgrundlagen" data-en="Legal basis">Rechtsgrundlagen</span></h2>
+    <p data-de="Die Verarbeitung Ihrer Daten erfolgt auf Grundlage von Art. 6 DSGVO. Für Kontaktanfragen gilt Art. 6 Abs. 1 lit. b (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. f (berechtigte Interessen) für den ordnungsgemäßen Betrieb der Website." data-en="The processing of your data is based on Art. 6 GDPR. For contact inquiries, Art. 6 para. 1 lit. b (pre-contractual measures) and Art. 6 para. 1 lit. f (legitimate interests) for proper website operation apply.">Die Verarbeitung Ihrer Daten erfolgt auf Grundlage von Art. 6 DSGVO. Für Kontaktanfragen gilt Art. 6 Abs. 1 lit. b (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. f (berechtigte Interessen) für den ordnungsgemäßen Betrieb der Website.</p>
+  </div>
+
+  <div class="section-block" id="s5">
+    <h2><span class="num">5</span><span data-de="Datenweitergabe" data-en="Data sharing">Datenweitergabe</span></h2>
+    <p data-de="Ihre Daten werden grundsätzlich nicht an Dritte weitergegeben. Das Kontaktformular wird über Formspree (formspree.io) abgewickelt – die übermittelten Daten (Name, E-Mail, Nachricht) werden auf Servern von Formspree verarbeitet. Weitere Informationen finden Sie in der Datenschutzerklärung von Formspree unter formspree.io/legal/privacy-policy." data-en="Your data is generally not passed on to third parties. The contact form is processed via Formspree (formspree.io) – the transmitted data (name, email, message) is processed on Formspree's servers. For more information, see Formspree's privacy policy at formspree.io/legal/privacy-policy.">Ihre Daten werden grundsätzlich nicht an Dritte weitergegeben. Das Kontaktformular wird über Formspree (formspree.io) abgewickelt – die übermittelten Daten (Name, E-Mail, Nachricht) werden auf Servern von Formspree verarbeitet. Weitere Informationen finden Sie in der Datenschutzerklärung von Formspree unter formspree.io/legal/privacy-policy.</p>
+  </div>
+
+  <div class="section-block" id="s6">
+    <h2><span class="num">6</span><span data-de="Ihre Rechte" data-en="Your rights">Ihre Rechte</span></h2>
+    <p data-de="Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:" data-en="You have the following rights regarding your personal data:">Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
+    <div class="rights-grid">
+      <div class="right-item"><strong data-de="Auskunft" data-en="Access">Auskunft</strong><span data-de="Art. 15 DSGVO" data-en="Art. 15 GDPR">Art. 15 DSGVO</span></div>
+      <div class="right-item"><strong data-de="Berichtigung" data-en="Rectification">Berichtigung</strong><span data-de="Art. 16 DSGVO" data-en="Art. 16 GDPR">Art. 16 DSGVO</span></div>
+      <div class="right-item"><strong data-de="Löschung" data-en="Erasure">Löschung</strong><span data-de="Art. 17 DSGVO" data-en="Art. 17 GDPR">Art. 17 DSGVO</span></div>
+      <div class="right-item"><strong data-de="Einschränkung" data-en="Restriction">Einschränkung</strong><span data-de="Art. 18 DSGVO" data-en="Art. 18 GDPR">Art. 18 DSGVO</span></div>
+      <div class="right-item"><strong data-de="Widerspruch" data-en="Objection">Widerspruch</strong><span data-de="Art. 21 DSGVO" data-en="Art. 21 GDPR">Art. 21 DSGVO</span></div>
+      <div class="right-item"><strong data-de="Datenübertragbarkeit" data-en="Portability">Datenübertragbarkeit</strong><span data-de="Art. 20 DSGVO" data-en="Art. 20 GDPR">Art. 20 DSGVO</span></div>
+    </div>
+    <p style="margin-top:1rem;" data-de="Sie haben außerdem das Recht, sich bei der zuständigen Datenschutz-Aufsichtsbehörde zu beschweren." data-en="You also have the right to lodge a complaint with the competent data protection authority.">Sie haben außerdem das Recht, sich bei der zuständigen Datenschutz-Aufsichtsbehörde zu beschweren.</p>
+  </div>
+
+  <div class="section-block" id="s7">
+    <h2><span class="num">7</span> Cookies</h2>
+    <p data-de="Diese Website verwendet keine Tracking-Cookies oder Analyse-Tools. Es werden ausschließlich technisch notwendige Cookies verwendet, die für den Betrieb der Website erforderlich sind." data-en="This website does not use tracking cookies or analytics tools. Only technically necessary cookies required for the operation of the website are used.">Diese Website verwendet keine Tracking-Cookies oder Analyse-Tools. Es werden ausschließlich technisch notwendige Cookies verwendet, die für den Betrieb der Website erforderlich sind.</p>
+  </div>
+
+  <div class="section-block" id="s8">
+    <h2><span class="num">8</span><span data-de="Kontakt bei Datenschutzfragen" data-en="Contact for privacy inquiries">Kontakt bei Datenschutzfragen</span></h2>
+    <p data-de="Bei Fragen zum Datenschutz können Sie sich jederzeit an uns wenden:" data-en="If you have any questions about data protection, please contact us at any time:">Bei Fragen zum Datenschutz können Sie sich jederzeit an uns wenden:</p>
+    <div class="contact-box">
+      <strong>WebDi</strong><br>
+      E-Mail: <span class="placeholder">di.kesh1995@outlook.com</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 <strong>WebDi</strong> ·
+    <a href="impressum.html" data-de="Impressum" data-en="Imprint">Impressum</a> ·
+    <a href="datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+  </p>
+</footer>
+
+<script>
+  let lang = 'de';
+  function toggleLang() {
+    lang = lang === 'de' ? 'en' : 'de';
+    document.querySelector('.lang-toggle').textContent = lang === 'de' ? 'EN' : 'DE';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-de]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text) el.innerHTML = text;
+    });
+  }
+</script>
+</body>
+</html>

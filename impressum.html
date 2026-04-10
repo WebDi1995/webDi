@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebDi – Impressum / Imprint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f4f0;
+      --fg: #111110;
+      --accent: #2a5cff;
+      --accent2: #e8e3d8;
+      --muted: #888;
+      --card: #ffffff;
+      --radius: 16px;
+      --nav-h: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(245,244,240,0.92);
+      backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw;
+      z-index: 100;
+      border-bottom: 1px solid var(--accent2);
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+
+    .back-link {
+      font-size: 0.9rem; font-weight: 500;
+      color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    .lang-toggle {
+      background: var(--fg); color: var(--bg);
+      border: none; border-radius: 50px;
+      padding: 6px 14px; font-size: 0.8rem;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer; font-weight: 500;
+      transition: background 0.2s;
+    }
+    .lang-toggle:hover { background: var(--accent); }
+
+    /* HERO BAR */
+    .page-hero {
+      padding-top: calc(var(--nav-h) + 60px);
+      padding-bottom: 60px;
+      padding-left: 6vw; padding-right: 6vw;
+      border-bottom: 1px solid var(--accent2);
+      opacity: 0; animation: fadeUp 0.7s 0.2s forwards;
+    }
+
+    .page-tag {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .page-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .page-sub {
+      margin-top: 0.8rem;
+      color: var(--muted); font-size: 0.95rem;
+    }
+
+    /* CONTENT */
+    .content-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 6vw 100px;
+    }
+
+    .section-block {
+      margin-bottom: 3rem;
+      opacity: 0; animation: fadeUp 0.7s forwards;
+    }
+    .section-block:nth-child(1) { animation-delay: 0.3s; }
+    .section-block:nth-child(2) { animation-delay: 0.4s; }
+    .section-block:nth-child(3) { animation-delay: 0.5s; }
+    .section-block:nth-child(4) { animation-delay: 0.6s; }
+    .section-block:nth-child(5) { animation-delay: 0.7s; }
+
+    .section-block h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1.5px solid var(--accent2);
+    }
+
+    .section-block p { color: #444; margin-bottom: 0.6rem; }
+
+    .info-card {
+      background: var(--card);
+      border: 1.5px solid var(--accent2);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .info-row {
+      display: flex; gap: 1rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--accent2);
+      font-size: 0.92rem;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { color: var(--muted); min-width: 130px; flex-shrink: 0; }
+    .info-value { color: var(--fg); font-weight: 500; }
+
+    .placeholder {
+      background: #fff3cd;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 0.85em;
+      color: #856404;
+      font-style: italic;
+    }
+
+    .note-box {
+      background: #eff4ff;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.2rem;
+      font-size: 0.88rem;
+      color: #3a4a7a;
+      margin-top: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem 6vw;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--accent2);
+    }
+    footer a { color: var(--muted); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .info-row { flex-direction: column; gap: 0.1rem; }
+      .info-label { min-width: unset; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Web<span>Di</span></a>
+  <div class="nav-right">
+    <a class="back-link" href="index.html">← <span data-de="Zurück" data-en="Back">Zurück</span></a>
+    <button class="lang-toggle" onclick="toggleLang()">EN</button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="page-tag" data-de="Rechtliches" data-en="Legal">Rechtliches</p>
+  <h1 class="page-title" data-de="Impressum" data-en="Imprint">Impressum</h1>
+  <p class="page-sub" data-de="Angaben gemäß § 5 TMG" data-en="Information according to § 5 TMG">Angaben gemäß § 5 TMG</p>
+</div>
+
+<div class="content-wrap">
+
+  <div class="section-block">
+    <h2 data-de="Anbieter" data-en="Provider">Anbieter</h2>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label" data-de="Name" data-en="Name">Name</span>
+        <span class="info-value"><span class="placeholder" data-de="Dikesh Maharjan" data-en="Dikesh Maharjan">Dikesh Maharjan</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-de="Tätigkeit" data-en="Occupation">Tätigkeit</span>
+        <span class="info-value" data-de="Selbstständiger Webdienstleister" data-en="Freelance web service provider">Selbstständiger Webdienstleister</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2 data-de="Anschrift" data-en="Address">Anschrift</h2>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label" data-de="Straße" data-en="Street">Straße</span>
+        <span class="info-value"><span class="placeholder" data-de="Ingeborg-Feustel-Str. 11" data-en="Ingeborg-Feustel-Str. 11">Ingeborg-Feustel-Str. 11</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-de="PLZ / Ort" data-en="ZIP / City">PLZ / Ort</span>
+        <span class="info-value"><span class="placeholder" data-de="12629 Berlin" data-en="12629 Berlin">12629 Berlin</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-de="Land" data-en="Country">Land</span>
+        <span class="info-value" data-de="Deutschland" data-en="Germany">Deutschland</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2 data-de="Kontakt" data-en="Contact">Kontakt</h2>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label" data-de="E-Mail" data-en="Email">E-Mail</span>
+        <span class="info-value"><span class="placeholder">di.kesh1995@outlook.com</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-de="Telefon (optional)" data-en="Phone (optional)">Telefon</span>
+        <span class="info-value"><span class="placeholder" data-de="Optional eintragen" data-en="Optional">+49 17657624710</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-de="Website" data-en="Website">Website</span>
+        <span class="info-value">https://webdi4u.netlify.app/</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2 data-de="Steuerliche Angaben" data-en="Tax Information">Steuerliche Angaben</h2>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label" data-de="Steuernummer" data-en="Tax number">Steuernummer</span>
+        <span class="info-value"><span class="placeholder" data-de="33/086/14253" data-en="33/086/14253">33/086/14253</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-de="USt-IdNr. (falls vorhanden)" data-en="VAT ID (if applicable)">USt-IdNr.</span>
+        <span class="info-value"><span class="placeholder" data-de="DE123456789 oder leer lassen" data-en="DE123456789 or leave blank">kommt bald</span></span>
+      </div>
+    </div>
+    <div class="note-box" data-de="💡 Als Kleinunternehmer nach § 19 UStG erheben Sie ggf. keine Umsatzsteuer – dann bitte einen entsprechenden Hinweis hier ergänzen." data-en="💡 As a small business owner under § 19 UStG you may not charge VAT – please add a note here if applicable.">
+      💡 Umsatzsteuerfrei aufgrund der Kleinunternehmerregelung lt. § 19 des Umsatzsteuergesetzes.
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2 data-de="Haftungsausschluss" data-en="Disclaimer">Haftungsausschluss</h2>
+    <p data-de="Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden." data-en="The contents of this website have been created with the utmost care. However, no guarantee can be given for the accuracy, completeness, and timeliness of the content.">
+      Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
+    </p>
+    <p data-de="Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf dieser Website nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen." data-en="As a service provider, I am responsible for my own content on this website in accordance with general law pursuant to § 7 para. 1 TMG. According to §§ 8 to 10 TMG, however, I am not obligated to monitor transmitted or stored third-party information.">
+      Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf dieser Website nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 <strong>WebDi</strong> ·
+    <a href="impressum.html" data-de="Impressum" data-en="Imprint">Impressum</a> ·
+    <a href="datenschutz.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+  </p>
+</footer>
+
+<script>
+  let lang = 'de';
+  function toggleLang() {
+    lang = lang === 'de' ? 'en' : 'de';
+    document.querySelector('.lang-toggle').textContent = lang === 'de' ? 'EN' : 'DE';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-de]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text) el.innerHTML = text;
+    });
+  }
+</script>
+</body>
+</html>
