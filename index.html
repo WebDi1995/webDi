@@ -27,7 +27,6 @@
       --shadow-md: 0 4px 16px rgba(15,23,42,0.08), 0 2px 6px rgba(15,23,42,0.05);
       --shadow-lg: 0 12px 40px rgba(15,23,42,0.10);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -38,8 +37,6 @@
       line-height: 1.65;
       overflow-x: hidden;
     }
-
-    /* ─── NAV ─── */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       height: var(--nav-h);
@@ -51,7 +48,6 @@
       padding: 0 6vw;
       z-index: 200;
     }
-
     .logo {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700; font-size: 1.45rem;
@@ -60,7 +56,6 @@
       display: flex; align-items: center; gap: 2px;
     }
     .logo-dot { color: var(--sky); }
-
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
     .nav-links a {
       font-size: 0.88rem; font-weight: 500;
@@ -68,9 +63,7 @@
       transition: color 0.18s;
     }
     .nav-links a:hover { color: var(--sky); }
-
     .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
-
     .lang-btn {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.78rem; font-weight: 600;
@@ -84,7 +77,6 @@
       transition: all 0.18s;
     }
     .lang-btn:hover { border-color: var(--sky); color: var(--sky); }
-
     .nav-cta {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.85rem; font-weight: 600;
@@ -96,16 +88,12 @@
       display: inline-flex; align-items: center; gap: 6px;
     }
     .nav-cta:hover { background: #0284C7; transform: translateY(-1px); }
-
-    /* ─── HERO ─── */
     #hero {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center;
       padding: calc(var(--nav-h) + 60px) 6vw 80px;
       position: relative; overflow: hidden;
     }
-
-    /* Subtle grid background */
     #hero::before {
       content: '';
       position: absolute; inset: 0;
@@ -117,8 +105,6 @@
       mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
       -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
     }
-
-    /* Sky glow blob */
     .hero-glow {
       position: absolute; right: 0; top: 10%;
       width: clamp(320px, 48vw, 640px);
@@ -126,9 +112,7 @@
       background: radial-gradient(circle at 60% 40%, #BAE6FD 0%, #E0F2FE 45%, transparent 70%);
       pointer-events: none; z-index: 0;
     }
-
     .hero-inner { position: relative; z-index: 1; max-width: 680px; }
-
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--white);
@@ -147,7 +131,6 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 0.8rem;
     }
-
     .hero-title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(2.6rem, 6.5vw, 5.2rem);
@@ -158,7 +141,6 @@
       opacity: 0; animation: fadeUp 0.7s 0.25s forwards;
     }
     .hero-title .sky { color: var(--sky); }
-
     .hero-sub {
       margin-top: 1.4rem;
       font-size: 1.05rem; font-weight: 400;
@@ -166,7 +148,6 @@
       max-width: 440px; line-height: 1.7;
       opacity: 0; animation: fadeUp 0.7s 0.4s forwards;
     }
-
     .hero-pills {
       display: flex; flex-wrap: wrap; gap: 0.6rem;
       margin-top: 1.6rem;
@@ -182,7 +163,6 @@
       color: #065F46;
     }
     .pill::before { content: '✓'; color: var(--mint); font-size: 0.9rem; }
-
     .hero-cta {
       display: flex; gap: 0.9rem; flex-wrap: wrap;
       margin-top: 2.2rem;
@@ -201,17 +181,13 @@
     .btn-ghost:hover { border-color: var(--sky); color: var(--sky); transform: translateY(-2px); }
     .btn-wa { background: #25D366; color: #fff; border: 2px solid #25D366; }
     .btn-wa:hover { background: #1DA851; border-color: #1DA851; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
-
-    /* ─── SECTION SHARED ─── */
     section { padding: 96px 6vw; }
-
     .eyebrow {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--sky); margin-bottom: 0.7rem;
     }
-
     .section-title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
@@ -223,16 +199,12 @@
       font-size: 1rem; color: var(--slate-600); max-width: 500px;
       margin-bottom: 3rem;
     }
-
-    /* ─── SERVICES ─── */
     #leistungen { background: var(--white); }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.25rem;
     }
-
     .service-card {
       background: var(--bg);
       border: 1.5px solid var(--slate-200);
@@ -245,7 +217,6 @@
       box-shadow: var(--shadow-md);
       transform: translateY(-3px);
     }
-
     .svc-icon {
       width: 48px; height: 48px;
       background: var(--sky-light);
@@ -253,23 +224,18 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1.4rem; margin-bottom: 1.2rem;
     }
-
     .service-card h3 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.08rem; font-weight: 600;
       margin-bottom: 0.5rem; color: var(--fg);
     }
     .service-card p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.6; }
-
-    /* ─── PRICING ─── */
     #preise { background: var(--bg); }
-
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.25rem; align-items: start;
     }
-
     .price-card {
       background: var(--white);
       border: 1.5px solid var(--slate-200);
@@ -279,14 +245,12 @@
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .price-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-
     .price-card.featured {
       border-color: var(--sky);
       background: var(--white);
       box-shadow: 0 0 0 4px var(--sky-light);
     }
     .price-card.featured:hover { box-shadow: 0 0 0 4px var(--sky-light), var(--shadow-lg); }
-
     .featured-badge {
       position: absolute; top: -13px; left: 1.6rem;
       background: var(--sky); color: #fff;
@@ -295,7 +259,6 @@
       letter-spacing: 0.08em; text-transform: uppercase;
       padding: 4px 12px; border-radius: 50px;
     }
-
     .price-tier {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.72rem; font-weight: 700;
@@ -310,9 +273,7 @@
     }
     .price-amount sup { font-size: 1.4rem; vertical-align: super; font-weight: 600; }
     .price-period { font-size: 0.85rem; color: var(--slate-400); margin-bottom: 1.6rem; margin-top: 0.2rem; }
-
     .price-divider { border: none; border-top: 1px solid var(--slate-200); margin-bottom: 1.2rem; }
-
     .price-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
     .price-list li {
       font-size: 0.88rem; color: var(--slate-600);
@@ -323,29 +284,24 @@
       color: var(--sky); font-weight: 700;
       flex-shrink: 0; margin-top: 1px;
     }
-
     .price-cta {
       margin-top: 1.8rem; width: 100%;
       display: flex; justify-content: center;
       padding: 12px; border-radius: var(--radius-sm);
       font-size: 0.9rem;
     }
-
     .pricing-note {
       text-align: center;
       margin-top: 2rem;
       font-size: 0.88rem;
       color: var(--slate-400);
     }
-
-    /* ─── ABOUT ─── */
     #about {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6vw; align-items: center;
       background: var(--white);
     }
-
     .about-card {
       background: var(--bg);
       border: 1.5px solid var(--slate-200);
@@ -353,7 +309,6 @@
       padding: 2.5rem;
       display: flex; flex-direction: column; gap: 1.5rem;
     }
-
     .stat-row { display: flex; gap: 2rem; flex-wrap: wrap; }
     .stat-item { flex: 1; min-width: 80px; }
     .stat-num {
@@ -362,7 +317,6 @@
       color: var(--sky); letter-spacing: -0.03em; line-height: 1;
     }
     .stat-label { font-size: 0.8rem; color: var(--slate-400); margin-top: 2px; }
-
     .about-feature {
       display: flex; align-items: flex-start; gap: 1rem;
     }
@@ -377,10 +331,7 @@
       font-size: 0.95rem; font-weight: 600; margin-bottom: 2px;
     }
     .about-feature p { font-size: 0.85rem; color: var(--slate-600); }
-
-    /* ─── CONTACT ─── */
     #kontakt { background: var(--bg); }
-
     .contact-wrapper {
       background: var(--white);
       border: 1.5px solid var(--slate-200);
@@ -390,23 +341,19 @@
       grid-template-columns: 1fr 1.4fr;
       box-shadow: var(--shadow-md);
     }
-
     .contact-left {
       background: var(--sky);
       padding: 3rem 2.5rem;
       color: #fff;
       display: flex; flex-direction: column; gap: 2rem;
     }
-
     .contact-left h2 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.7rem; font-weight: 700;
       letter-spacing: -0.03em; line-height: 1.2;
     }
     .contact-left p { font-size: 0.92rem; opacity: 0.85; line-height: 1.65; }
-
     .contact-channels { display: flex; flex-direction: column; gap: 1rem; }
-
     .channel-item {
       display: flex; align-items: center; gap: 0.9rem;
     }
@@ -418,7 +365,6 @@
     }
     .channel-label { font-size: 0.72rem; opacity: 0.7; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
     .channel-value { font-size: 0.9rem; font-weight: 600; }
-
     .wa-btn-contact {
       display: inline-flex; align-items: center; gap: 8px;
       background: #25D366; color: #fff;
@@ -431,24 +377,19 @@
       align-self: flex-start;
     }
     .wa-btn-contact:hover { background: #1DA851; transform: translateY(-2px); }
-
     .contact-right { padding: 3rem 2.5rem; }
-
     .contact-right h3 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.1rem; font-weight: 600;
       margin-bottom: 1.5rem; color: var(--fg);
     }
-
     .form-grid { display: flex; flex-direction: column; gap: 0.9rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
-
     .form-field { display: flex; flex-direction: column; gap: 0.35rem; }
     .form-field label {
       font-size: 0.78rem; font-weight: 600;
       color: var(--slate-600); letter-spacing: 0.02em;
     }
-
     input, textarea, select {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.9rem;
@@ -467,14 +408,11 @@
       box-shadow: 0 0 0 3px var(--sky-light);
     }
     input::placeholder, textarea::placeholder { color: var(--slate-400); }
-
     .submit-row {
       display: flex; align-items: center; gap: 1rem;
       flex-wrap: wrap; margin-top: 0.5rem;
     }
     #formStatus { font-size: 0.85rem; }
-
-    /* ─── WHATSAPP FLOATING ─── */
     .wa-float {
       position: fixed; bottom: 28px; right: 28px;
       width: 56px; height: 56px;
@@ -505,8 +443,6 @@
       from { transform: scale(0); opacity: 0; }
       to   { transform: scale(1); opacity: 1; }
     }
-
-    /* ─── FOOTER ─── */
     footer {
       background: var(--white);
       border-top: 1px solid var(--slate-200);
@@ -525,18 +461,12 @@
     .footer-links a { font-size: 0.85rem; color: var(--slate-400); text-decoration: none; transition: color 0.15s; }
     .footer-links a:hover { color: var(--sky); }
     .footer-copy { font-size: 0.82rem; color: var(--slate-400); }
-
-    /* ─── REVEAL ─── */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .reveal.visible { opacity: 1; transform: none; }
-
-    /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
-    /* ─── MOBILE ─── */
     @media (max-width: 768px) {
       #about { grid-template-columns: 1fr; }
       .contact-wrapper { grid-template-columns: 1fr; }
@@ -549,7 +479,6 @@
 </head>
 <body>
 
-<!-- WHATSAPP FLOATING -->
 <a class="wa-float" href="https://wa.me/4917657624710" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -557,7 +486,6 @@
   <span class="wa-float-tooltip" data-de="WhatsApp schreiben" data-en="Chat on WhatsApp">WhatsApp schreiben</span>
 </a>
 
-<!-- NAV -->
 <nav>
   <a class="logo" href="#hero">Web<span class="logo-dot">Di</span></a>
   <ul class="nav-links">
@@ -572,7 +500,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-glow"></div>
   <div class="hero-inner">
@@ -615,7 +542,7 @@
       <p data-de="Registrierung Ihrer Wunschdomain mit der passenden Endung – schnell und unkompliziert." data-en="Registration of your desired domain with the right extension – fast and straightforward.">Registrierung Ihrer Wunschdomain mit der passenden Endung – schnell und unkompliziert.</p>
     </div>
     <div class="service-card reveal">
-      <div class="svc-icon">🖥️</div>
+      <div class="svc-icon">🖥</div>
       <h3 data-de="Hosting & Webdienst" data-en="Hosting & Web Service">Hosting & Webdienst</h3>
       <p data-de="Zuverlässiges Hosting mit hoher Verfügbarkeit, schnellen Ladezeiten und regelmäßigen Backups." data-en="Reliable hosting with high availability, fast loading times, and regular backups.">Zuverlässiges Hosting mit hoher Verfügbarkeit, schnellen Ladezeiten und regelmäßigen Backups.</p>
     </div>
@@ -629,6 +556,28 @@
       <h3 data-de="Updates & Patches" data-en="Updates & Patches">Updates & Patches</h3>
       <p data-de="Regelmäßige Wartung und Sicherheitsupdates – damit Ihre Website immer aktuell und sicher bleibt." data-en="Regular maintenance and security updates – keeping your website always current and secure.">Regelmäßige Wartung und Sicherheitsupdates – damit Ihre Website immer aktuell und sicher bleibt.</p>
     </div>
+
+    <!-- NEW: E-Mail-Service -->
+    <div class="service-card reveal">
+      <div class="svc-icon">📧</div>
+      <h3 data-de="E-Mail-Service" data-en="Email Service">E-Mail-Service</h3>
+      <p data-de="Professionelle E-Mails mit Ihrer eigenen Domain – inkl. Webmail, Spam-Filter, großzügigem Speicher und kompletter Migration. Einmalige Einrichtung, danach monatlich betreut." data-en="Professional email with your own domain – including webmail, spam filter, generous storage and full migration. One-time setup, then monthly managed.">Professionelle E-Mails mit Ihrer eigenen Domain – inkl. Webmail, Spam-Filter, großzügigem Speicher und kompletter Migration. Einmalige Einrichtung, danach monatlich betreut.</p>
+    </div>
+
+    <!-- NEW: VPN-Service -->
+    <div class="service-card reveal">
+      <div class="svc-icon">🛡️</div>
+      <h3 data-de="VPN-Service" data-en="VPN Service">VPN-Service</h3>
+      <p data-de="Privater VPN-Server mit WireGuard – für sicheres Surfen, Homeoffice & Site-to-Site. Für Privat & B2B, mit schnellen Servern in Deutschland und Apps für alle Geräte." data-en="Private VPN server with WireGuard – for secure browsing, remote work & site-to-site. For private & B2B, with fast servers in Germany and apps for all devices.">Privater VPN-Server mit WireGuard – für sicheres Surfen, Homeoffice & Site-to-Site. Für Privat & B2B, mit schnellen Servern in Deutschland und Apps für alle Geräte.</p>
+    </div>
+
+    <!-- NEW: e-Learning Plattform -->
+    <div class="service-card reveal">
+      <div class="svc-icon">🎓</div>
+      <h3 data-de="e-Learning Plattform" data-en="e-Learning Platform">e-Learning Plattform</h3>
+      <p data-de="Moodle-Plattform aus einer Hand – Hosting, Einrichtung und Benutzerverwaltung. Kurse, Rollen & Rechte inklusive, DSGVO-konform und bereit für Ihre Inhalte." data-en="Moodle platform from one source – hosting, setup and user management. Courses, roles & permissions included, GDPR-compliant and ready for your content.">Moodle-Plattform aus einer Hand – Hosting, Einrichtung und Benutzerverwaltung. Kurse, Rollen & Rechte inklusive, DSGVO-konform und bereit für Ihre Inhalte.</p>
+    </div>
+
   </div>
 </section>
 
@@ -684,7 +633,7 @@
     </div>
 
   </div>
-  <p class="pricing-note reveal" data-de="Individuelle Anfrage? Ich erstelle gerne ein persönliches Angebot." data-en="Custom request? I'm happy to create a personal offer.">Individuelle Anfrage? Ich erstelle gerne ein persönliches Angebot.</p>
+  <p class="pricing-note reveal" data-de="Individuelle Anfrage? E-Mail, VPN & e-Learning auf Anfrage – ich erstelle gerne ein persönliches Angebot." data-en="Custom request? Email, VPN & e-Learning on request – I'm happy to create a personal offer.">Individuelle Anfrage? E-Mail, VPN & e-Learning auf Anfrage – ich erstelle gerne ein persönliches Angebot.</p>
 </section>
 
 <!-- ABOUT -->
@@ -771,7 +720,7 @@
           </div>
         </div>
         <div class="channel-item">
-          <div class="channel-icon">⏱️</div>
+          <div class="channel-icon">⏱</div>
           <div>
             <div class="channel-label" data-de="Reaktionszeit" data-en="Response time">Reaktionszeit</div>
             <div class="channel-value" data-de="Innerhalb 24h" data-en="Within 24h">Innerhalb 24h</div>
@@ -815,7 +764,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <a class="footer-logo" href="#hero">Web<span>Di</span></a>
   <div class="footer-links">
@@ -826,7 +774,6 @@
 </footer>
 
 <script>
-  // ── Language ──
   let lang = 'de';
   function toggleLang() {
     lang = lang === 'de' ? 'en' : 'de';
@@ -840,17 +787,11 @@
       el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
     });
   }
-
-  // ── Scroll reveal ──
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // ── Form (Formspree) ──
-  // 👉 DEINE FORMSPREE-ID hier eintragen (z.B. "xpwzgkjd"):
   const FORMSPREE_ID = 'mpqvpdnl';
-
   document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
